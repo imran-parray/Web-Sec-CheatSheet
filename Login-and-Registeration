@@ -1,0 +1,23 @@
+Register Similar Accounts.
+
+
+Bruteforce OTP.
+Session Token.
+Adding 0x00 [nullbytes] in fields.
+Weak Password Policy
+Check No confirmation for email - [ https://hackerone.com/reports/90643 ]
+Reset token Expiration mechanism [ https://hackerone.com/reports/220185 ]
+HttpOnly Cookie.
+Cookie path [ \ = vul]
+Cookie Expiration Time.
+Session Fixation.
+login Over HTTP
+Bruteforce Login.
+How many Times a User can change the Password.
+Lasspass= Newpass
+CSRF in Password Change.
+Forced browsing.
+Checking Cache control [ https://hackerone.com/reports/158270 ]
+Creat 2 Accounts [ A and B]
+Access A from B 
+Misusing IDOR.

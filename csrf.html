@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.2.7.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2017-09-28T01:50:50.379712244"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; line-height: 120% }
+		pre.cjk { font-family: "Nimbus Mono L", monospace }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang="en-GB" dir="ltr">
+<pre class="western" style="border-top: none; border-bottom: 1.00pt double #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.07cm; padding-left: 0cm; padding-right: 0cm"><b>Removing CSRF Token</b>
+
+<b>- </b><span style="font-weight: normal">Try to remove the CSRF token from the http request and check if the request is still accepted.</span>
+
+
+
+<b>Duplicate Tokens</b>
+
+-Log in as user “A”
+-Copy The CSRF token of user “A”
+-Use it in the requests of User “B”
+
+
+<b>Empty CSRF Parameter</b>
+
+<b>-</b><span style="font-weight: normal">Remove the CSRF parameter Value But Dont Remove the parameter.</span>
+<span style="font-weight: normal">-send it and analyst the response</span>
+
+<b>Send Random Strings</b>
+
+<span style="font-weight: normal">-Some Radon value of same Size</span>
+<span style="font-weight: normal">-Change one character and Check the response [checks only lenght]</span>
+<span style="font-weight: normal">-Use Refere Header and Change its value to blank</span>
+
+<span style="font-weight: normal">-Calculate no of Alphabits with proper Positions</span>
+<span style="font-weight: normal">-Calculate no of Numiracals with proper Positions.</span>
+<span style="font-weight: normal">-Generate some similar Values in the CSRF Token and check the response.</span>
+<span style="font-weight: normal">	Eg:  CSRF_TOKEN= abc123a1b2</span>
+<span style="font-weight: normal">	New: CRRF_TOKEN= xyz456e2b4</span>
+
+
+
+Note:
+
+if you are removing the CSRF token and sending the reqest to the server and if the server
+response back with invalid csrf token but he reflected the inputted data you can check if they
+didn't have "X-FRAME-OPTIONS:SAMEORIGIN" try to creat an exploit using clickjack+TextReflection
+
+
+</pre>
+</body>
+</html>

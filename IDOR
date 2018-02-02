@@ -1,0 +1,18 @@
+Where to look for IDOR Bugs ?
+
+Mobile Apps 	[[90%] of Bugs[
+Opt out links 	[php?id=10]
+Update Settings	[upadte Accounts settings,change password etc]
+
+
+
+
+Testing Mobile Apps
+====================
+>Creat and proxy on port 8080 and tick [All Interfaces]
+>ifconfig
+>change your mobile proxy in settings to 192.168.43.102:8080
+>Done !
+
+	
+

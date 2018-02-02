@@ -1,0 +1,78 @@
+Crossdomain.xml
+Nmap ‘*’
+httprint
+clustered [ clusterd -i 127.0.0.1 -o linux –fingerprint ]
+nikto
+
+
+
+
+
+
+
+
+
+
+-->Run a Spider<--
+==================
+
+
+inputScanner
+============
+>Change Burp to Scope only
+>Spider the Host 
+>Copy All the Links
+>Paste in /opt/lampp/htdocs/InputScanner/url.txt
+>open http://127.0.0.1/InputScanner/
+>Done !
+>Copy output-js.txt from Output folder
+>Paste it into ../htdocs/Jscanner/
+>Visit http://127.0.0.1/Jscanner/
+
+
+Subdomains
+==========
+
+https://virustotal.com 
+https://dnsdumpster.com/
+subdomain Bruteforce
+	-sublist3r
+	-knockpy
+	-aquatone
+	-massdns
+
+Takeover Check
+	-Manually
+	-sub6.py
+	-aquatone -takeover
+	-EyeWitness
+
+
+Github
+======
+
+using github
+trufflehog http://www.github.com/invis/jshjsd.git
+“badoo.com” API_key
+“badoo.com” secret_key
+“badoo.com” aws_key
+“badoo.com” Password 
+“badoo.com” FTP
+“badoo.com” login 
+“badoo.com” github_token 
+"badoo.com" password
+"badoo.com" dev
+"api.badoo.com"
+http methods [curl -vX TRACE "https://gratipay.com"]
+use head on restricted areas
+
+
+
+
+Amazon S3 Buckets
+=================
+
+amazon s3 buckets. [ ruby lazys3.rb badoo ]
+amazon s3 buckets
+site:amazonaws.com -s3 badoo
+site:amazonaws.com inurl:badoo

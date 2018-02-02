@@ -1,0 +1,30 @@
+Testing oAuth 2.0
+-----------------
+
+URL Redriction
+==============
+While Auth Process Intercept the Http Requests and see the and check the redriction
+Parameter and play around for some time.
+ 
+
+
+oAuth Token Hijacking
+=====================
+While Testing OPEN REDRICTION check if the tokens can be hijacked any how 
+
+
+
+Bypass using Subdomains
+=======================
+
+-if redrict_url=http://example.com
+-try redrict_url=http://evil.example.com
+
+
+Bypass Using Suffix
+====================
+
+-if redrict_url=http://example.com
+-Try redrict_url=http://example.com.nx
+-Try redrict_url=http://example.com.in
+-Try redrict_url=http://example.com.mx

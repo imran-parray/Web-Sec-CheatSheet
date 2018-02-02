@@ -1,0 +1,18 @@
+
+
+
+
+		
+Listing Files:
+--------------
+aws s3 ls s3://imran
+
+
+Uploading Files:
+---------------
+aws s3 mv imran.txt s3://imran
+
+
+Delete Files
+------------
+aws s3 mv imran.txt s3://imran

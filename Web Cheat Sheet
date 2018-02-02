@@ -1,0 +1,68 @@
+						Web Cheat Sheet
+
+1)Mapping
+==========
+Map The Appilication 						wget -S --spider <target>
+Collect Website Contents					wget -r -D <domain> <target>
+Bruteforcing Dir 						dirbuster
+whatweb								whatweb googel.com
+
+2)GOOGLING
+===========
+Have Some Googling 						site:www.xxxxx.ca AND intitle:"index.of" "backup"
+								site:www.xxxx.org AND filetype:wsdl wsdl
+
+3)Serve Files
+==============
+Check The Server Metafiles					/robots.txt
+finding robots.txt						./rockspider.pl -www www.google.com
+
+4)MetaTags
+==========
+Check For Meta Tags						Proxy through Burpsuite and Check Requests
+
+5)Infomation Leakage on search engines
+======================================
+GHDB								site:owasp.org
+								cache:owasp.org
+
+5)Fingerprint Web Application Framework (OTG-INFO-008)
+=================
+HTTP Headers							nc jkbose.co.in 80
+Cookies								nc jkbose.co.in 80 -[Check cookies]-
+Source Codes 						        Getting Web App info
+Blind Elephent							BlindElephent.py jkbose.co.in joomla
+
+
+6)Detecting servers
+=================
+
+HTTP Headers							nc jkbose.co.in 80
+Httprint 							httprint google.com -s /root/signatures.txt
+wappalyzer							Firefox addon to Get server Info
+
+
+7)Identifying Technology Used
+===========================
+Detecting Load Balance						lbd domain.com
+
+
+
+
+
+
+
+
+8)Test Role Definitions (OTG-IDENT-001)
+=====================================
+trying to Acess Ristricted Data:				1. Login as administrator 
+								2. Visit admin page. i.e. http://targetSite/Admin 
+								3. Logout 
+								4. Login as normal user 
+								5. Visit the admin page URL directly. http://targetSite/Admin
+
+
+
+
+
+
