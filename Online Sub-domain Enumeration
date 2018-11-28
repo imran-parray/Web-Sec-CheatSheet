@@ -1,0 +1,15 @@
+curl -s -X GET 'https://crt.sh/?q=%.example.com&output=json' | jq '.name_value' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u
+
+curl -s "http://web.archive.org/cdx/search/cdx?url=*.hackerone.com/*&output=text&fl=original&collapse=urlkey" |sort| sed -e 's_https*://__' -e "s/\/.*//" -e 's/:.*//' -e 's/^www\.//' | uniq
+
+
+curl -s https://api.hackertarget.com/hostsearch/?q=example.com | cut -d',' -f1 | sort -u
+
+
+curl -s https://certspotter.com/api/v0/certs?domain=hackerone.com | jq -r '.[] | .dns_names | .[]' | sort -u
+
+
+curl -s https://www.threatcrowd.org/searchApi/v2/domain/report/?domain=hackerone.com | jq -r '.subdomains | .[]' | sort -u
+
+
+ curl https://www.virustotal.com/ui/domains/kiwi.com/subdomains | jq '.data | .[].id' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u
