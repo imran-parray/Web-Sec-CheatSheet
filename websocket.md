@@ -34,6 +34,13 @@ function handleReply(event) {
 
 ```
 
+### Finding all web Socket Handshake Request
+
+- Click on Burp Searhc
+- Now search `HTTP/1.1 101 Switching Protocol` on responses only 
+
+
+
 
 Refrences:
 
