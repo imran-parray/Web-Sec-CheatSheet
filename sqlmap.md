@@ -17,10 +17,10 @@ sqlmap -r request.txt
 ```
 
 
-__Request in File(inject only username parameter)___
+__Request in File(inject only username parameter)__
 
--Capture the request with httpheader,burpsuite
--Save it to req.txt
+- Capture the request with httpheader,burpsuite
+- Save it to req.txt
 ```console
 sqlmap -r req.txt -p username
 ```
