@@ -8,7 +8,7 @@ __Single URL__
 sqlmap -u http://signisasia.net/books/view?id=1 --dbs
 ```
 
-__Request in File___
+__Input Request in File__
 
 - Capture the request with httpheader,burpsuite
 - Save it to req.txt
@@ -17,7 +17,7 @@ sqlmap -r request.txt
 ```
 
 
-__Request in File(inject only username parameter)__
+__Input Request in File(Test only username parameter)__
 
 - Capture the request with httpheader,burpsuite
 - Save it to req.txt
