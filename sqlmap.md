@@ -59,7 +59,12 @@ sqlmap -u http://imranparray.com/welcom.php --cookie="PHPSESSID=adsaasd56454a6s5
 ```
 
 
+__Scanning multiple targets__
 
+```console
+sqlmap -m urls.txt -dbs --batch'
+
+```
 
 ## Exploitation
 
